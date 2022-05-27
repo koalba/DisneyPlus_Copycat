@@ -8,7 +8,7 @@ import { IResponseChannel }  from '../interfaces/data.interface';
 })
 export class ChannelService {
 
-  baseURL : string = 'http://localhost:5000/'
+  baseURL : string = 'https://disney-plus-api.vercel.app/'
 
   constructor( private http : HttpClient ) { }
 

@@ -8,7 +8,7 @@ import { IResponse } from '../interfaces/data.interface';
 })
 export class SlidersService {
 
-  baseURL : string = 'http://localhost:5000/'
+  baseURL : string = 'https://disney-plus-api.vercel.app/'
 
   constructor( private http : HttpClient ) { }
 
