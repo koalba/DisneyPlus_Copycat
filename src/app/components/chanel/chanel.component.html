@@ -1,0 +1,6 @@
+<a [href]="channel.url" [title]="channel.title" class="channel">
+    <img loading="lazy" class="channel__img" [src]="channel.logo" [alt]="channel.title">
+    <video loading="lazy" class="channel__video" autoplay playsinline loop>
+        <source [src]="channel.video" type="video/mp4"> 
+    </video>
+</a>

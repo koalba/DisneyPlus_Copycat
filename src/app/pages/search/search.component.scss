@@ -1,0 +1,38 @@
+.search{
+    padding: 14rem calc(3.75vw + .5rem) 1.5rem; 
+
+    &__form{
+        background-color: plum;
+        position: fixed;
+        top: 4.4rem;
+        width: 100%;
+    }
+
+    &__input{
+        font-size: 2.75rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        width: 100%;
+        color: var(--c-search);
+        background-color: var(--c-search-bkg);
+        padding: .5em calc(3.75vw + 1.5rem);
+
+        transition: all .3s ease;
+
+        &::placeholder{
+            color: inherit;
+        }
+
+        &:focus{
+            outline: none;
+            color: var(--c-main-text);
+            background-color: var(--c-search-bkg-focus);
+        }
+    }
+
+    &__h2{
+        font-size: 1.3rem;
+        font-weight: 800;
+        padding:0 0 .5rem .5rem;
+    }
+}

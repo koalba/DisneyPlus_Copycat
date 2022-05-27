@@ -1,0 +1,52 @@
+@import "mixins.scss";
+
+.channel{
+    position: relative;
+    border-radius: .7rem;
+    transform: scale(1);
+    background: linear-gradient(0deg, var(--c-darkBlue-500) 0%, var(--c-darkBlue-300) 100%);
+    cursor: pointer;
+
+    transition: all .3s ease;
+    
+    &__img{
+        position: relative;
+        z-index: 1;
+        border-radius: .7em;
+        box-shadow: var(--c-shadow), inset 0 0 0 3px var(--c-darkBlue-200);
+
+        transition: all .3s ease;
+
+        @include media (m){
+            box-shadow: var(--c-shadow), inset 0 0 0 1px var(--c-darkBlue-200);
+        }
+    }
+
+    &__video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        border-radius: .7em;
+
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    &:hover{
+        transform: scale(1.05);
+
+        .channel__img{
+            box-shadow: var(--c-shadow-hover), inset 0 0 0 3px var(--c-darkBlue-100);
+
+            @include media (m){
+                box-shadow: var(--c-shadow), inset 0 0 0 1px var(--c-darkBlue-100);
+            }
+        }
+
+        .channel__video{
+            opacity: 1;
+        }
+
+    }
+}

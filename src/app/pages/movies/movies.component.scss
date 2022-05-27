@@ -1,0 +1,150 @@
+@import "mixins.scss";
+
+.movies{
+    width: 100%;
+    background-color: rgb(26, 29, 41);
+
+    &__header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 5.5rem calc(3.75vw + 1rem) 1rem;
+        z-index: 1;
+
+        box-shadow: inset 0px 110px 140px -70px black;
+        background-color: rgb(26, 29, 41);
+    }
+
+    &__title{
+        font-size: 2.75rem;
+        font-weight: 600;
+    }
+
+    &__container{
+        display: inline;
+        position: relative;
+        margin-left: 1.5rem;
+    }
+
+    &__label{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        font-family: 'Times New Roman', Times, serif;
+
+        svg{
+            width: 1.35rem;
+            height: 1.35rem;
+            fill: currentColor;
+            margin-left: 1.25rem;
+        }
+    }
+
+    &__select{
+        font-family: 'Times New Roman', Times, serif;
+
+        color: inherit;
+        background-color: rgba(182, 182, 182, 0.2);
+        border-radius: 20rem;
+        padding: .55rem 1rem;
+
+        background: url('/assets/arrow-down.svg') calc(100% - .55rem) center / 1.25rem no-repeat, rgba(182, 182, 182, 0.2);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        cursor: pointer;
+        transition: all .2s ease;
+    }
+
+    &__select:focus{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__group{
+        position: absolute;
+        top: 120%;
+        left: 0;
+        width: 175px;
+        height: 0;
+        padding: 1rem 0;
+        z-index: 10;
+
+        background-color: var(--c-subnav);
+        border: 1.5px solid var(--c-subnav-border);
+        border-radius: .2em;
+
+        opacity: 0;
+        // pointer-events: none;
+        transition: opacity .1s ease;
+    }
+
+    &__select:focus + &__group{
+        opacity: 1;
+        height: 690px;
+    }
+
+    &__radio{
+        display: none;
+    }
+
+    &__text{
+        position: relative;
+        font-size: .8rem;
+        text-transform: uppercase;
+
+        display: block;
+        padding: .4em 1.5rem .3em;
+
+        cursor: pointer;
+
+        &::before{
+            display: none;
+            content: "";
+
+            position: absolute;
+            top: .5em;
+            bottom: .5em;
+            left: .75rem;
+            border-left: 2px solid currentColor;
+        }
+
+        &:hover{
+            background-color: #fafafa23;
+        }
+    }
+
+    &__radio:checked + &__text{
+        font-weight: 700;
+        background-color: #fafafa23;
+
+        &::before{
+            display: block;
+        }
+    }
+
+    &__ul{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.25rem;
+        padding: 11rem calc(3.75vw + 1rem) 4rem;
+
+        @include media(1440){
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include media(t){
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include media(m){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+}

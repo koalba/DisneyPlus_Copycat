@@ -1,0 +1,234 @@
+@import "mixins.scss";
+
+.movie{
+    padding-top: 4rem;
+    background-color: var(--c-darkBlue-600);
+    width: 100%;
+
+    &__img-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        // height: 100%;
+        background-color: var(--c-darkBlue-600);
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, hsla(235, 17%, 14%, .0) 15%, var(--c-darkBlue-600) 40%);
+            background-position: 37% 68%;
+            background-size: 200% 500%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__info-container{
+        position: relative;
+        background: linear-gradient(0deg, hsla(228, 22%, 13%, 1) 30%, hsla(235, 17%, 14%, .0) 60%);
+        padding: 4rem 0;
+        height: 100%;
+    }
+
+    &__info, &__extras, &__details{
+        position: relative;
+    }
+
+    &__info{
+        padding: 0 calc(3.75vw + 1rem);
+    }
+
+    &__logo{
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+
+    &__comingsoon{
+        color: var(--c-coming);
+        font-size: 1.4rem;
+        font-weight: 900;
+        margin-bottom: .5rem;
+    }
+
+    &__row{
+        @include d-flex(flex-start, center, row, wrap);
+        margin-bottom: 2rem;
+    }
+
+    &__specs{
+        @include d-flex(flex-start, center);
+        margin-bottom: .5rem;
+    }
+
+    &__spec {
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        width: auto;
+        height: 1.2rem;
+    }
+
+    &__tags{
+        width: 100%;
+    }
+
+    &__text{
+        font-size: 1.2rem;
+        max-width: 900px;
+        line-height: 1.7;
+        &--small{
+            font-size: .75rem;
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__buttons{
+        @include d-flex(flex-start, center);
+        margin-bottom: 1rem;
+    }
+
+    &__button{
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        border-radius: .25rem;
+        box-shadow: inset 0 0 0 1px var(--c-main-text);
+        color: inherit;
+        background-color: hsla(228, 36%, 5%, 0.5);
+        margin-right: 1.25rem;
+
+        transition: all .3s ease;
+
+        &:hover{
+            background-color: #ffffff80;
+            box-shadow: inset 0 0 0 1px #ffffff00;
+        }
+
+        &--small{
+            padding: 0;
+            margin-right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--c-darkBlue-700);
+            box-shadow: inset 0 0 0 2px var(--c-main-text);
+
+            &:hover{
+                color: var(--c-darkBlue-700);
+                background-color: var(--c-main-text);
+            }
+        }
+
+        &--white{
+            color: var(--c-darkBlue-700);
+            background-color: var(--c-main-text);
+            @include d-flex(space-between, center);
+        }
+        
+    }
+
+    .photosensitive{
+        margin-top: 1.75em;
+    }
+
+    &__play{
+        display: inline-block;
+        width: 1.25rem;
+        margin-right: 1rem;
+    }
+
+    &__extras{
+        @include d-flex(flex-start);
+        border-bottom: 2px solid var(--c-subnav-border);
+        margin: 4rem calc(3.75vw + 1rem) 0;
+    }
+
+    &__extra{
+        &-button{
+            position: relative;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: inherit;
+            padding: .7rem 0;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: calc(100% - 3px);
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: currentColor;
+                border-radius: 1rem 1rem 0 0;
+
+                opacity: 0;
+                transition: all .3s ease;
+            }
+
+            &:hover::before, &.active::before{
+                opacity: 1;
+            }
+        }
+
+        & + & {
+            margin-left: 2.5rem;
+        }
+    }
+
+    &__details{
+        display: none;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 1rem calc(3.75vw + 1rem) 0;
+
+        & > * {
+            width: 50%;
+        }
+
+        &.active{
+            display: flex;
+        }
+    }
+
+    &__title{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    &__actor{
+        margin-bottom: .25rem;
+    }
+
+    &__decription{
+        align-self: flex-end;
+        margin-left: 3rem;
+        max-height: 250px;
+        @include d-flex(space-between, flex-start, column, wrap);
+    }
+
+    &__desc{
+        font-size: .9rem;
+        margin-top: 1rem;
+        padding-right: 2rem;
+        width: 50%;
+
+        &-title{
+            color: var(--c-footer-text);
+        }
+    }
+}
+app-slider{
+    display: none;
+}
+
+app-slider.active{
+    display: block;
+}

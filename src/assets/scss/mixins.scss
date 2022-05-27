@@ -1,0 +1,56 @@
+@mixin d-flex(
+  $justify: space-between,
+  $align: stretch,
+  $direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  @if $wrap == "nowrap" {
+    align-items: $align;
+  } @else {
+    align-content: $align;
+    align-items: $align;
+  }
+}
+
+@mixin position($type: absolute, $y: t, $x: l, $ynum: 0, $xnum: 0) {
+  position: $type;
+
+  @if $y == "t" {
+    top: $ynum;
+  } @else {
+    bottom: $ynum;
+  }
+  @if $x == "l" {
+    left: $xnum;
+  } @else {
+    right: $xnum;
+  }
+}
+
+@mixin media($d) {
+  $mobile: 767px;
+  $tablet: 1025px;
+
+  @if ($d == "m") {
+    @media screen and (max-width: #{$mobile}) {
+      @content;
+    }
+  } @else if($d == "t") {
+    @media screen and (max-width: #{$tablet}) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: #{$d + "px"}) {
+      @content;
+    }
+  }
+}
+
+@mixin even-columns($column: 2, $gap: 1) {
+  display: grid;
+  grid-template-columns: repeat(#{$column}, 1fr);
+  gap: #{$gap + "rem"};
+}

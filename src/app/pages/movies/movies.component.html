@@ -1,0 +1,35 @@
+<div class="movies">
+    <div class="movies__header">
+        <h2 class="movies__title">Movies</h2>
+        <div class="movies__container">
+            <input 
+                class="movies__select" 
+                type="text" 
+                readonly 
+                [(ngModel)]="filter"
+                [ngStyle]="{ 'width' : filter.length + 7 + 'ch' }">
+            <div class="movies__group">
+                <label class="movies__option">
+                    <input class="movies__radio" type="radio" name="filter" value="Featured" [(ngModel)]="filter">
+                    <span class="movies__text">Featured</span>
+                </label>
+                <label class="movies__option">
+                    <input class="movies__radio" type="radio" name="filter" value="All" [(ngModel)]="filter">
+                    <span class="movies__text">All Movies A-Z</span>
+                </label>
+                <label class="movies__option" *ngFor="let genre of genres">
+                    <input class="movies__radio" type="radio" name="filter" [value]="genre" [(ngModel)]="filter">
+                    <span class="movies__text">{{genre}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <ul class="movies__ul">
+        <ng-container 
+            *ngFor="let pelicula of ( filter === 'All' ? oPeliculas : peliculas )">
+            <li *ngIf="pelicula.details.genre.includes(filter) || filter === 'Featured'  || filter === 'All'" class="movies__li">
+            <app-slider-card [data]="pelicula" [tipo]="'slider'"></app-slider-card>
+            </li>
+        </ng-container>
+    </ul>
+</div>

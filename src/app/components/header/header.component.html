@@ -1,0 +1,84 @@
+<header class="header" (scroll)="onScroll($event)" [ngClass]="{ 'scroll' : scroll }">
+    <nav class="header__nav">
+        <a href="#" title="Disney Plus +" class="header__logo">
+            <h1 class="header__h1">
+                <img class="header__logo-svg" src="/assets/disneyplus.svg" alt="Disney Plus +">
+            </h1>
+        </a>
+        <ul class="header__ul">
+            <li 
+                *ngFor=" let link of navigation "
+                class="header__li">
+                <a [routerLink]="[ link.url ]" [title]="link.title" class="header__a">
+                    <img [src]="link.svg" [alt]="link.title" class="header__svg">
+                    <span class="header__span">{{link.title}}</span>
+                </a>
+            </li>
+            <li class="header__li">
+                <span class="header__menu">
+                    <svg aria-hidden="true" aria-label="more" role="img" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" class="header__svg">
+                        <title></title><path d="M19.53 28.827h-2.933a1.048 1.048 0 0 1-1.048-1.047v-2.933c0-.579.47-1.048 1.048-1.048h2.933c.578 0 1.047.47 1.047 1.048v2.933c0 .578-.469 1.047-1.047 1.047zm0-8.799h-2.933a1.048 1.048 0 0 1-1.048-1.047v-2.933c0-.579.47-1.048 1.048-1.048h2.933c.578 0 1.047.469 1.047 1.048v2.933c0 .578-.469 1.047-1.047 1.047zm0-8.8h-2.933a1.048 1.048 0 0 1-1.048-1.047V7.248c0-.578.47-1.047 1.048-1.047h2.933c.578 0 1.047.469 1.047 1.047v2.933c0 .579-.469 1.048-1.047 1.048z" class="sc-Rmtcm kaMwXS"></path>
+                    </svg>
+                </span>
+                <ul class="header__sec-ul">
+                    <li 
+                        *ngFor=" let link of secondary "
+                        class="header__sec-li">
+                        <a [href]="link.url" [title]="link.title" class="header__a">
+                            <img [src]="link.svg" [alt]="link.title" class="header__svg">
+                            <span class="header__span">{{link.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="header__userscontainer">
+            <ng-container *ngFor="let user of users">
+                <button [title]="user.username" class="header__user main" *ngIf="user.active">
+                    <span class="header__profile">{{user.username}}</span>
+                    <div class="header__img-container">
+                        <img class="header__img" [src]="user.avatar" [alt]="user.username">
+                    </div>
+                </button>
+            </ng-container>
+            <ul class="header__usernav">
+                <li class="header__users opacity">
+                    <ul class="header__list">
+                        <ng-container *ngFor="let user of users">
+                            <li *ngIf="!user.active" (click)="activeUser(user._id)">
+                                <button class="header__user" [title]="user.username">
+                                    <div class="header__img-container">
+                                        <img class="header__img" [src]="user.avatar" [alt]="user.username">
+                                    </div>
+                                    <span class="header__profile">{{user.username}}</span>
+                                    <span class="header__lock" *ngIf="user.locked">
+                                        <svg aria-hidden="true" aria-label="lock" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" class="header__lock-svg">
+                                            <g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1"><g id="icon-/-lock-/-locked"><rect id="bounding-box" x="0" y="0" width="24" height="24"/><path d="M20,10 C21.1045695,10 22,10.8954305 22,12 L22,22 C22,23.1045695 21.1045695,24 20,24 L4,24 C2.8954305,24 2,23.1045695 2,22 L2,12 C2,10.8954305 2.8954305,10 4,10 L20,10 Z M12,15 C10.8954305,15 10,15.8954305 10,17 C10,18.1045695 10.8954305,19 12,19 C13.1045695,19 14,18.1045695 14,17 C14,15.8954305 13.1045695,15 12,15 Z" id="Lock-Bottom" fill="#F9F9F9"/><path d="M12,0.75 C15.9239831,0.75 19.1198593,3.86739652 19.2461248,7.76068579 L19.25,8 L19.25,12 L16.75,12 L16.75,8 C16.75,5.37664744 14.6233526,3.25 12,3.25 C9.44951834,3.25 7.36853034,5.26014129 7.25488786,7.782572 L7.25,8 L7.25,12 L4.75,12 L4.75,8 C4.75,3.99593556 7.99593556,0.75 12,0.75 Z" id="Lock_Bar" fill="#F9F9F9"/></g></g>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </li>
+                        </ng-container>
+                        <li>
+                            <button class="header__user add">
+                                <div class="header__img-container">
+                                    <svg aria-hidden="true" aria-label="plus" color="white" role="img" transform="" version="1.1" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" class="sc-bRBYWo hBzWqm"><path d="M16.469 17.219V5.5a1 1 0 0 1 1-1h.312a1 1 0 0 1 1 1v11.719H30.5a1 1 0 0 1 1 1v.312a1 1 0 0 1-1 1H18.781V31.25a1 1 0 0 1-1 1h-.312a1 1 0 0 1-1-1V19.531H4.75a1 1 0 0 1-1-1v-.312a1 1 0 0 1 1-1h11.719z" class="sc-Rmtcm kaMwXS"/></svg>
+                                </div>
+                                <span class="header__profile">Add profile</span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__links opacity">
+                    <ul class="header__navlist">
+                        <li class="header__navitem"><a href="#" title="Edit profiles">Edit profiles</a></li>
+                        <li class="header__navitem"><a href="#" title="App settings">App settings</a></li>
+                        <li class="header__navitem"><a href="#" title="Account">Account</a></li>
+                        <li class="header__navitem"><a href="#" title="Help">Help</a></li>
+                        <li class="header__navitem"><a href="#" title="Log out">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

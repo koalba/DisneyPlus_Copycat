@@ -1,0 +1,70 @@
+@import "mixins.scss";
+
+.search{
+    // padding: 13rem calc(3.75vw + .5rem) 1.5rem; 
+    padding: 14.5rem calc(3.75vw + .5rem) 3rem; 
+
+    &__form{
+        position: fixed;
+        top: 4.5rem;
+        // margin-top: 4.4rem;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__input{
+        font-size: 2.7rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        width: 100%;
+        color: var(--c-search);
+        background-color: var(--c-search-bkg);
+        padding: .5em calc(3.75vw + 1.5rem);
+
+        transition: all .3s ease;
+
+        &::placeholder{
+            color: inherit;
+        }
+
+        &:focus{
+            outline: none;
+            color: var(--c-main-text);
+            background-color: var(--c-search-bkg-focus);
+        }
+    }
+
+    &__clear{
+        position: absolute;
+        top: 1.9rem;
+        right: 1rem;
+    }
+
+    &__x{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    &__h2{
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding:0 0 1rem .5rem;
+    }
+    
+    &__ul{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.25rem;
+
+        @include media(1440){
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include media(t){
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include media(m){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

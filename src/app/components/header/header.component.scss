@@ -1,0 +1,312 @@
+@import "mixins.scss";
+
+.header{
+    position: fixed;
+    top: 0;
+    left : 0;
+    width: 100%;
+    padding: .75rem 1.25rem .75rem 2.25rem;
+    z-index: 2;
+
+    transition: all .3s ease;
+
+    &.scroll{
+        background-color: var(--c-darkBlue-700);
+    }
+
+    @include media(m){
+        padding: 1.05rem 1.3rem .75rem;
+    }
+
+    &__nav{
+        @include d-flex(flex-start, center);
+    }
+
+    &__logo{
+        margin-right: 2.25rem;
+
+        @include media(m){
+            margin-right: 2.3rem;
+        }
+
+        &-svg{
+            width: 5rem;
+            @include media(m){
+                width: 3.9rem;
+            }
+        }
+    }
+
+    &__ul, &__sec-ul{
+        @include d-flex(flex-start, center);
+    }
+
+    &__li, &__sec-li{
+        position: relative;
+        margin: 0 .20rem;
+        padding: .5rem 1rem;
+        cursor: pointer;
+
+        @include media(t){
+            padding: .5rem .5rem;
+        }
+    }
+
+    &__li{
+        @include media(t){
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-bottom: 2.5px solid currentColor;
+                border-radius: 2px;
+    
+                transform-origin: left;
+                transform: scaleX(0);
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    &__li:hover{
+        &::before{
+            transform: scaleX(1);
+            pointer-events: none;
+        }
+    }
+
+    &__li:last-child{
+        padding: 0;
+        &::before{
+            content: none;
+        }
+
+        @include media(t){
+            padding: .5rem .5rem;
+        }
+    }    
+
+    &__span{
+        position: relative;
+
+        font-size: .85rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        margin-left: .55rem;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: 2.5px solid currentColor;
+            border-radius: 2px;
+
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: all .3s ease;
+
+            pointer-events: none;
+        }
+
+        @include media(t){
+            display: none;
+        }
+    }
+
+    &__menu{
+        display: none;
+        
+        @include media(t){
+            display: block;
+        }
+    }
+
+    &__sec-ul{
+        @include media(t){
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: .5rem 2rem .5rem 0;
+
+            flex-direction: column;
+            align-items: stretch;
+
+            background-color: var(--c-subnav);
+            border-radius: .25rem;
+            border: 1px solid var(--c-subnav-border);
+            z-index: 1;
+
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease;
+
+            .header__span{
+                display: block;
+            }
+        }
+    }
+
+    &__li:hover &__sec-ul{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &__sec-li{
+        @include media(t){
+            padding: .5rem 1rem;
+        }
+    }
+
+    &__a{
+        @include d-flex(flex-start, center);
+    }
+
+    &__a:hover &__span::before{
+        transform: scaleX(1);
+    }
+
+    &__svg{
+        width: 1.25rem;
+
+        @include media (t){
+            width: 1.5rem;
+        }
+    }
+
+    &__userscontainer{
+        margin-left: auto;
+    }
+
+    &__user{
+        width: 100%;
+        color: inherit;
+        position: relative;
+        @include d-flex(center, center);
+
+        &.main{
+            z-index: 2;
+        }
+    }
+
+    &__profile{
+        font-size: .85rem;
+        margin-right: 1rem;
+    }
+
+    &__user.main &__profile{
+        @include media (1440){
+            display: none;
+        }
+    }
+
+    &__img-container{
+        max-width: 3rem;
+        min-width: 2.25rem;
+
+        @include media(m){
+            width: 2.25rem;
+        }
+    }
+
+    .add &__img-container{
+        background-color: #fafafa21;
+        border-radius: 50%;
+        padding: .75rem;
+
+        transition: background-color .3s ease;
+    }
+
+    .add:hover &__img-container{
+        background-color: #fafafa3d;
+    }
+
+    &__usernav{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+
+        min-width: 250px;
+        padding: 4.5rem 1.25rem 1.75rem;
+        color: var(--c-footer-text);
+
+        pointer-events: none;
+        
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            background-color: var(--c-subnav);
+            border-radius: .2em;
+            border: 1.25px solid var(--c-subnav-border);
+
+            transform-origin: top;
+            transform: scaleY(0);
+
+            transition: transform .5s ease;
+        }
+    }
+
+    &__userscontainer:hover &__usernav{
+        pointer-events: auto;
+
+        &::before{
+            transform: scaleY(1);
+        }
+    }
+
+    &__users{
+        border-top: 1.25px solid var(--c-subnav-border);
+    }
+
+    .opacity{
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    
+    &__userscontainer:hover .opacity{
+        opacity: 1;
+        transition: opacity .3s ease .2s;
+    }
+
+    &__list &__user{
+        margin-top: 1rem;
+        justify-content: flex-start;
+        margin-left: 0;
+        color: inherit;
+    }
+
+    &__list &__profile{
+        margin: 0 auto 0 1rem;
+    }
+
+    &__lock{
+        color: white;
+        width: 1rem;
+        height: 1rem;
+        margin-left: auto;
+    }
+
+    &__navitem{
+        margin-top: 1rem;
+        transition: color .3s ease;
+
+        &:hover{
+            color: var(--c-main-text);
+        }
+    }
+}

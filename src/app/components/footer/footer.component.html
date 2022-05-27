@@ -1,0 +1,13 @@
+<footer class="footer">
+    <a href="#" title="Disney Plus +" class="footer__logo">
+        <img class="footer__img" src="/assets/disneyplus.svg" alt="">
+    </a>
+    <ul class="footer__nav">
+        <li 
+            *ngFor=" let link of navigation "
+            class="footer__li">
+            <a [href]="link.url" [title]="link.title" class="footer__a">{{link.title}}</a>
+        </li>
+    </ul>
+    <h5 class="footer__copy">© Disney. All Rights Reserved.</h5>
+</footer>

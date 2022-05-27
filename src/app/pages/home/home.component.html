@@ -1,0 +1,8 @@
+<div class="slider-container">
+    <app-slider [tipo]="slider.tipo" *ngFor=" let slider of cover " [numVisible]="1" [cards]="slider"></app-slider>
+
+    <app-channels></app-channels>
+
+    <app-slider [tipo]="slider.tipo" *ngFor=" let slider of sliders " [cards]="slider"></app-slider>
+</div>
+

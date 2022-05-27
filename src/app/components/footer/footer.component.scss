@@ -1,0 +1,34 @@
+@import "mixins.scss";
+
+.footer{
+    text-align: center;
+    // margin-top: 2.5rem;
+    padding: 1rem  2rem 1.5rem;
+    background-color: var(--c-darkBlue-700);
+    position: relative;
+    z-index: 2;
+
+    &__img{
+        margin: 0 auto .75rem;
+        width: 5rem;
+    }
+
+    &__nav{
+        @include d-flex(center, center, row, wrap);
+    }
+
+    &__li{
+        margin: 0  .75rem 1.5rem;
+    }
+
+    &__a, &__copy{
+        font-size: .75rem;
+        color: var(--c-footer-text);
+
+        transition: all .3s ease;
+    }
+
+    &__a:hover{
+        color: var(--c-main-text);
+    }
+}

@@ -1,0 +1,97 @@
+@import "mixins.scss";
+
+.slider{
+    // padding: .75rem 4rem;
+    padding: .75rem calc(3.75vw + .5rem);
+    @include media (m){
+        // overflow-y: hidden;
+    }
+
+    &.cover{
+        padding: 6.2rem calc(3.75vw + .5rem) 1.5rem;  //1.5
+    }
+
+    &__h2{
+        font-size: 1.3rem;
+        font-weight: 800;
+        padding:0 0 .5rem .5rem;
+    }
+
+    &__container{
+        position: relative;
+    }
+
+    &__arrow{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(3.5vw + 1rem);
+        color: inherit;
+        opacity: 0;
+        @include d-flex(center, center);
+        z-index: 1;
+
+        transition: all .3s ease;
+
+        &.prev{
+            left : calc(-3.5vw - .5rem);
+        }
+
+        &.next{
+            right: calc(-3.5vw - .5rem);
+        }
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &.inactive{
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__svg{
+        width: 2.5rem;
+    }
+
+
+    &__ul{
+        width: 200%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        // gap: 1.2rem;
+
+        transition: all 1s ease;
+    }
+
+    &__li{
+        margin: 0 .5rem;
+        transition: all .5s ease;
+
+        &.inactive{
+            opacity: .7;
+        }
+    }
+
+    &__dots{
+        position: absolute;
+        bottom: .75rem;
+        right: 2.75rem;
+        @include d-flex(flex-end, center);
+    }
+
+    &__dot{
+        width: .55rem;
+        height: .55rem;
+        margin-left: .75rem;
+        border-radius: 50%;
+        background-color: var(--c-darkBlue-100);
+
+        transition: all .5s ease;
+
+        &.active{
+            background-color: var(--c-main-text);
+        }
+    }
+}
