@@ -10,13 +10,24 @@ import { ChannelService } from 'src/app/services/channel.service';
 })
 export class ChannelsComponent implements OnInit {
 
+  channelsPlaceholder : any = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+
+  loaded : boolean = false
+
   channels : IChannels[] = []
 
   constructor( private channelService : ChannelService ) { }
 
   ngOnInit() : void {
 
-    this.channelService.getChannels().subscribe( ( data :IResponseChannel ) => { this.channels = data.data } )
+    this.channelService.getChannels().subscribe( ( data :IResponseChannel ) => { this.channels = data.data; this.loaded = true } )
 
   }
 

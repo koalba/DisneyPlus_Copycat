@@ -13,16 +13,26 @@ export class HomeComponent implements OnInit {
   cover   : any 
   sliders : any
 
+  loaded : boolean = false
+
+  sliderPlaceholder : any = [
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+
   constructor( public sliderService : SlidersService) { }
 
   ngOnInit(): void {
     this.sliderService.getSlidersByType('cover').subscribe( ( data : IResponse ) => {
       this.cover = data.data
-      console.log(this.cover)
+      this.loaded = true
     })
     this.sliderService.getSlidersByType('slider').subscribe( ( data : IResponse ) => {
       this.sliders = data.data
-      console.log(this.sliders)
+      this.loaded = true
 
     })
   }

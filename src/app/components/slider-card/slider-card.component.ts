@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICollection } from 'src/app/interfaces/collection.interface';
-import { IPeliculas } from 'src/app/interfaces/pelicula.interface';
+
 @Component({
   selector: 'app-slider-card',
   templateUrl: './slider-card.component.html',
@@ -19,8 +19,9 @@ export class SliderCardComponent implements OnInit {
   @Input() tipo   : string = ''
   @Input() height : boolean = false
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+  }
 }

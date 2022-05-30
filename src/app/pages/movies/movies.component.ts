@@ -38,7 +38,6 @@ export class MoviesComponent implements OnInit {
         }
         return 0
       })
-      console.log(this.oPeliculas)
     })
   }
 }

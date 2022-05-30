@@ -28,7 +28,7 @@
         <ng-container 
             *ngFor="let pelicula of ( filter === 'All' ? oPeliculas : peliculas )">
             <li *ngIf="pelicula.details.genre.includes(filter) || filter === 'Featured'  || filter === 'All'" class="movies__li">
-            <app-slider-card [data]="pelicula" [tipo]="'slider'"></app-slider-card>
+                <app-slider-card [data]="pelicula" [tipo]="'slider'"></app-slider-card>
             </li>
         </ng-container>
     </ul>

@@ -1,7 +1,14 @@
 <ul class="chanel">
-    <li 
+    <ng-container *ngIf="loaded">
+        <li 
         *ngFor=" let channel of channels "
         class="chanel__li">
-        <app-chanel [channel]="channel" ></app-chanel>
-    </li>
+            <app-chanel [channel]="channel" ></app-chanel>
+        </li>
+    </ng-container>
+    <ng-template [ngIf]="!loaded">
+        <li class="chanel__placeholder" *ngFor=" let channel of channelsPlaceholder ">
+            <img src="assets/disney.png" alt="">
+        </li>
+    </ng-template>
 </ul>

@@ -1,0 +1,19 @@
+<div class="slider" [ngClass]="{ 'cover' : tipo === 'cover' }">
+
+    <h2 class="slider__h2" *ngIf="tipo === 'slider'"></h2>
+
+    <div class="slider__container">
+
+        <ul class="slider__ul"
+            [ngStyle]="setStyle()">
+            <li *ngFor=" let slide of sliderPlaceholder; let i = index "
+                class="slider__li">
+                <div class="slider__placeholder">
+                    <img [src]="tipo === 'slider' ? 'assets/movies/moonknight/moonknight.jpeg' : 'assets/movies/moonknight/moonknight-big.jpeg'" alt="Placeholder">
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

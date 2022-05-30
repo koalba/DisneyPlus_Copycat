@@ -11,6 +11,16 @@
 
     cursor: pointer;
 
+    &__placeholder{
+        border-radius: .25rem;
+        width: 100%;
+        background-color: grey;
+
+        img{
+            visibility: hidden;
+        }
+    }
+
     &__logo{
         position: absolute;
         top: 0;

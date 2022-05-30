@@ -3,27 +3,28 @@
     [ngClass]="{ 'normal' : tipo === 'slider' }" 
     class="card">
     <img 
-    *ngIf=" tipo === 'slider' "
+    *ngIf=" tipo === 'slider'"
         [src]="!height ? data.src : data.height" 
         [alt]="data.titulo" 
         class="card__img">
     <img 
-    *ngIf=" tipo === 'cover' "
+    *ngIf=" tipo === 'cover'"
     [src]="data.srcBig" 
     [alt]="data.titulo" 
     class="card__img">
     <img 
-    *ngIf=" tipo === 'cover' "
+    *ngIf=" tipo === 'cover'"
     [ngClass]=" { 'cover' : !data.texto } "
     [src]=" data.logoCover ? data.logoCover : data.logo " 
     [alt]="data.titulo" 
     class="card__logo">
+
     <div class="card__hover">
         <h4 class="card__p" *ngIf=" tipo === 'cover' && data.texto " >{{data.texto}}</h4>
     </div>
 </a>
 
-<a *ngIf="tipo === 'collection'" href=""
+<a *ngIf="tipo === 'collection'" href="#"
     [title]="data.name" 
     [ngClass]="{ 'normal' : tipo === 'collection' }" 
     class="card">

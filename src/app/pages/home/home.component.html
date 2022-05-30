@@ -1,8 +1,20 @@
 <div class="slider-container">
-    <app-slider [tipo]="slider.tipo" *ngFor=" let slider of cover " [numVisible]="1" [cards]="slider"></app-slider>
+    <ng-container *ngIf="loaded">
+        <app-slider [tipo]="slider.tipo" *ngFor=" let slider of cover " [numVisible]="1" [cards]="slider"></app-slider>
+    </ng-container>
 
+    <ng-template [ngIf]="!loaded">
+        <app-slider-skelleton [tipo]="'cover'" [numVisible]="1"></app-slider-skelleton>
+    </ng-template>
+    
     <app-channels></app-channels>
+    
+    <ng-container *ngIf="loaded">
+        <app-slider [tipo]="slider.tipo" *ngFor=" let slider of sliders " [cards]="slider"></app-slider>
+    </ng-container>
 
-    <app-slider [tipo]="slider.tipo" *ngFor=" let slider of sliders " [cards]="slider"></app-slider>
+    <ng-template [ngIf]="!loaded">
+        <app-slider-skelleton [tipo]="'slider'" [numVisible]="4" *ngFor=" let slider of sliderPlaceholder "></app-slider-skelleton>
+    </ng-template>
 </div>
 

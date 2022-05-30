@@ -1,12 +1,11 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { ISlider } from 'src/app/interfaces/slider-interfaces';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  selector: 'app-slider-skelleton',
+  templateUrl: './slider-skelleton.component.html',
+  styleUrls: ['./slider-skelleton.component.scss']
 })
-export class SliderComponent implements OnInit {
+export class SliderSkelletonComponent implements OnInit {
 
   @HostListener( "window:resize" , ['$event'])
   redimensionar( e : any ) : void {
@@ -15,51 +14,36 @@ export class SliderComponent implements OnInit {
 
   }
 
-  numero : number = 0
-  interval : any
-
-  @Input() cards        : ISlider | any = {}
-  @Input() numVisible   : number = 5
-  @Input() tipo         : string = ''  // Slider o Cover
+  @Input() tipo : string = ''
+  @Input() numVisible : number = 0
 
   anchoVentana        : number = 0
   numVisibleOriginal  : number = 0
   resultado           : number = 0
   numElements         : number = 0
+  numero              : number = 0
 
+  sliderPlaceholder : any = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+
+  slider : any = []
 
   constructor() { }
 
   ngOnInit(): void {
-    this.autoNumero()
-
     this.anchoVentana = window.innerWidth
     this.numVisibleOriginal = this.numVisible
     this.setStyles()
-
-  }
-
-  aumentaNumero() : void {
-    ( this.numero < this.resultado - 1 ) ? this.numero++ : this.numero = 0
-
-    this.autoNumero()
-  }
-
-  disminNumero() : void {
-    ( this.numero > 0 ) ? this.numero-- : this.numero = this.resultado -1
-
-    this.autoNumero()
-  }
-
-  setNumero( value : number ) : void{
-    this.numero = value
-  }
-
-  autoNumero() : void{
-    if( this.tipo === 'cover'){
-      clearTimeout( this.interval )
-      this.interval = setInterval( () => { this.aumentaNumero() }, 6000 )
-    }
   }
 
   setStyle() : Object {
@@ -85,7 +69,8 @@ export class SliderComponent implements OnInit {
       }
     }
 
-    this.numElements = this.cards.cards.length
+    this.numElements = this.sliderPlaceholder.length
     this.resultado = this.numElements / this.numVisible
   }
+
 }

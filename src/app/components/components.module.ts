@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { SearchListComponent } from './search-list/search-list.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
+import { SliderSkelletonComponent } from './slider-skelleton/slider-skelleton.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     ChannelsComponent,
     HeaderComponent,
     FooterComponent,
-    SearchListComponent
+    SearchListComponent,
+    SliderSkelletonComponent
   ],
   exports: [
     SliderComponent,
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ChannelsComponent,
     SearchListComponent,
-    SliderCardComponent
+    SliderCardComponent,
+    SliderSkelletonComponent
   ],
   imports: [
     CommonModule,
