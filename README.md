@@ -11,7 +11,7 @@
 Disney Plus Copycat made with Angular, TypeScript and SCSS. API made with Mongo Atlas and ExpressJS. You can see the API too [HERE!](https://github.com/koalba/DisneyPlus_API)
 
 [![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=0ABF53&style=for-the-badge)](https://disney-plus-copycat.vercel.app/)
-[![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=0ABF53&style=for-the-badge&logo=github&logoColor=white)](https://user-images.githubusercontent.com/34134103/171468870-476c9942-485f-458c-ba82-4406479a4365.jpg)
+[![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=0ABF53&style=for-the-badge&logo=github&logoColor=white)](https://github.com/koalba/DisneyPlus_Copycat)
 
 ![Disney+](https://user-images.githubusercontent.com/34134103/171468870-476c9942-485f-458c-ba82-4406479a4365.jpg)
 
