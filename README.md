@@ -32,21 +32,12 @@ Disney Plus Copycat made with Angular, TypeScript and SCSS. API made with Mongo 
 
 Want to download and see the project on your own computer?
 
-You have to:
+First, you have to download the Project's Folder. After that, you have to:
 
-1. Download the Folder
-2. Using the console:
-   1. Install node_modules in the project's folder:
 
-```
-   npm i
-```
-
-3. Start the Server:
-
-```
-   ng s -o
-```
+|  1. Install node_modules inside the Project's Folder: |  2. Start the Server: |
+|---|---|
+|  <img src="https://user-images.githubusercontent.com/34134103/171472950-aae1b019-16bc-4106-a875-8adb8794f60c.png" /> |  <img src="https://user-images.githubusercontent.com/34134103/171473454-f00dd3f5-8c0b-42bc-84c5-19cc496050f8.png" /> |
 
 <p>&nbsp;</p>
 
@@ -56,10 +47,17 @@ You have to:
 
 For this Copycat I recreated:
 
-- [The Home Page](https://disney-plus-copycat.vercel.app/)
-- [The Search Page](https://disney-plus-copycat.vercel.app/search)
-- [The Movie Filter Page](https://disney-plus-copycat.vercel.app/movies)
-- [The Detail Page](https://disney-plus-copycat.vercel.app/movies/628628211809e29b6438b8c1)
+### [The Home Page:](https://disney-plus-copycat.vercel.app/)
+![image](https://user-images.githubusercontent.com/34134103/171476129-56618e2d-4131-4a1d-9253-97a41a77d328.png)
+
+### [The Search Page:](https://disney-plus-copycat.vercel.app/search)
+![The Search Page](https://user-images.githubusercontent.com/34134103/171475429-cd9c92ce-ef60-4927-8e81-97e7e4675bb4.png)
+
+### [The Movie Filter Page:](https://disney-plus-copycat.vercel.app/movies)
+![image](https://user-images.githubusercontent.com/34134103/171476206-df71e501-0804-4b5c-9cde-e794405f7a97.png)
+
+### [The Detail Page:](https://disney-plus-copycat.vercel.app/movies/628628211809e29b6438b8c1)
+![image](https://user-images.githubusercontent.com/34134103/171476260-6f841543-02b2-4a6c-9c5c-ae89c70407c7.png)
 
 <p>&nbsp;</p>
 
@@ -120,3 +118,7 @@ It was quite a journey, from not knowing anything about Angular to be working wi
 
 - [Edu Fierro](https://www.youtube.com/c/EduardoFierroPro)
 - [Rubrika](https://rubrika.es/)
+- [Pablo Wakonigg](https://github.com/pablowako)
+- [Sergio Muñoz](https://github.com/sergiomogm)
+- [Álvaro Gómez](https://github.com/GomezRM)
+- [Miguel Pérez](https://github.com/MiguelPraw)
