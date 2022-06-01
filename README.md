@@ -1,12 +1,22 @@
-# Disney Plus - Copycat
+# Disney+ Copycat
 
-Disney Plus Copycat made with Angular, TypeScript and SCSS.
+[![Angular](https://img.shields.io/static/v1?label=&message=Angular&color=DD0031&logo=angular&logoColor=white&style=for-the-badge)](https://angular.io/)
+[![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=3178C6&logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org/)
+[![SASS](https://img.shields.io/static/v1?label=&message=SASS&color=CC6699&logo=sass&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org/)
+[![BEM Methodology](https://img.shields.io/static/v1?label=&message=BEM%20Methodology&color=17A1E6&logo=bem&logoColor=white&style=for-the-badge)](http://getbem.com/)
+[![MongoDB](https://img.shields.io/static/v1?label=&message=MongoDB&color=47A248&logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/es)
+[![ExpressJS](https://img.shields.io/static/v1?label=&message=ExpressJS&color=F0D91E&logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/es/)
+[![NodeJS](https://img.shields.io/static/v1?label=&message=NodeJS&color=339933&logo=nodedotjs&logoColor=white&style=for-the-badge)](https://nodejs.org/en/)
 
-For all the data of the Copycat I manually made an API, with Express, NodeJS and MongoDB. If you want, [click here see the API !](https://github.com/koalba/DisneyPlus_API)
+Disney Plus Copycat made with Angular, TypeScript and SCSS. API made with Mongo Atlas and ExpressJS. You can see the API too [HERE!](https://github.com/koalba/DisneyPlus_API)
+
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=0ABF53&style=for-the-badge)](https://disney-plus-copycat.vercel.app/)
+[![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=0ABF53&style=for-the-badge&logo=github&logoColor=white)](https://user-images.githubusercontent.com/34134103/171468870-476c9942-485f-458c-ba82-4406479a4365.jpg)
+
+![Disney+](https://user-images.githubusercontent.com/34134103/171468870-476c9942-485f-458c-ba82-4406479a4365.jpg)
 
 # Index
 
-- [Links](#links)
 - [Setting Up](#setting-up)
 - [Overview](#overview)
   - [Components](#components)
@@ -15,18 +25,6 @@ For all the data of the Copycat I manually made an API, with Express, NodeJS and
   - [What I learned](#what-i-learned)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-<p>&nbsp;</p>
-
-# Links
-
-🟢 &nbsp;&nbsp; **LIVE SITE :**
-
-[Disney Plus Copycat LS](https://disney-plus-copycat.vercel.app/)
-
-🟢 &nbsp;&nbsp; **GITHUB REPOSITORY :**
-
-[Disney Plus Copycat Repo](https://github.com/koalba/DisneyPlus_Copycat)
 
 <p>&nbsp;</p>
 
